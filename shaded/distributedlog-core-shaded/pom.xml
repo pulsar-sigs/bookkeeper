@@ -80,20 +80,36 @@
                   <include>com.google.protobuf:protobuf-java</include>
                   <include>net.java.dev.jna:jna</include>
                   <include>net.jpountz.lz4:lz4</include>
-                  <include>org.apache.bookkeeper:bookkeeper-common</include>
-                  <include>org.apache.bookkeeper:bookkeeper-common-allocator</include>
-                  <include>org.apache.bookkeeper:cpu-affinity</include>
-                  <include>org.apache.bookkeeper:bookkeeper-tools-framework</include>
-                  <include>org.apache.bookkeeper:bookkeeper-proto</include>
-                  <include>org.apache.bookkeeper:bookkeeper-server</include>
-                  <include>org.apache.bookkeeper:circe-checksum</include>
-                  <include>org.apache.bookkeeper.http:http-server</include>
-                  <include>org.apache.bookkeeper.stats:bookkeeper-stats-api</include>
+                  <include>io.github.pulsar-sigs:bookkeeper-common</include>
+                  <include>io.github.pulsar-sigs:bookkeeper-common-allocator</include>
+                  <include>io.github.pulsar-sigs:cpu-affinity</include>
+                  <include>io.github.pulsar-sigs:bookkeeper-tools-framework</include>
+                  <include>io.github.pulsar-sigs:bookkeeper-proto</include>
+                  <include>io.github.pulsar-sigs:bookkeeper-server</include>
+                  <include>io.github.pulsar-sigs:circe-checksum</include>
+                  <include>io.github.pulsar-sigs.http:http-server</include>
+                  <include>io.github.pulsar-sigs.stats:bookkeeper-stats-api</include>
+
+<!--                  <include>org.apache.bookkeeper:bookkeeper-common</include>-->
+<!--                  <include>org.apache.bookkeeper:bookkeeper-common-allocator</include>-->
+<!--                  <include>org.apache.bookkeeper:cpu-affinity</include>-->
+<!--                  <include>org.apache.bookkeeper:bookkeeper-tools-framework</include>-->
+<!--                  <include>org.apache.bookkeeper:bookkeeper-proto</include>-->
+<!--                  <include>org.apache.bookkeeper:bookkeeper-server</include>-->
+<!--                  <include>org.apache.bookkeeper:circe-checksum</include>-->
+<!--                  <include>org.apache.bookkeeper.http:http-server</include>-->
+<!--                  <include>org.apache.bookkeeper.stats:bookkeeper-stats-api</include>                  -->
+                  
                   <include>org.apache.commons:commons-collections4</include>
                   <include>org.apache.commons:commons-lang3</include>
-                  <include>org.apache.distributedlog:distributedlog-common</include>
-                  <include>org.apache.distributedlog:distributedlog-core</include>
-                  <include>org.apache.distributedlog:distributedlog-protocol</include>
+                  <include>io.github.pulsar-sigs:distributedlog-common</include>
+                  <include>io.github.pulsar-sigs:distributedlog-core</include>
+                  <include>io.github.pulsar-sigs:distributedlog-protocol</include>
+
+<!--                  <include>org.apache.distributedlog:distributedlog-common</include>-->
+<!--                  <include>org.apache.distributedlog:distributedlog-core</include>-->
+<!--                  <include>org.apache.distributedlog:distributedlog-protocol</include>-->
+
                   <include>org.apache.httpcomponents:httpclient</include>
                   <include>org.apache.httpcomponents:httpcore</include>
                   <include>org.apache.thrift:libthrift</include>
@@ -191,12 +207,16 @@
                   <shadedPattern>dlshade.com.scurrilous.circe</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>io.github.pulsar-sigs</pattern>
+                  <pattern>org.apache.bookkeeper</pattern>
                   <shadedPattern>dlshade.org.apache.bookkeeper</shadedPattern>
                 </relocation>
+<!--                <relocation>-->
+<!--                  <groupId>io.github.pulsar-sgis</groupId>-->
+<!--                  <shadedPattern>dlshade.org.apache.bookkeeper</shadedPattern>-->
+<!--                </relocation>-->
                 <!-- distributedlog -->
                 <relocation>
-                  <pattern>io.github.pulsar-sigs</pattern>
+                  <pattern>org.apache.distributedlog</pattern>
                   <shadedPattern>dlshade.org.apache.distributedlog</shadedPattern>
                 </relocation>
               </relocations>

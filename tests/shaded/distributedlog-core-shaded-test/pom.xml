@@ -27,7 +27,7 @@
   <name>Apache BookKeeper :: Tests :: distributedlog-core-shaded test</name>
   <dependencies>
     <dependency>
-      <groupId>org.apache.distributedlog</groupId>
+      <groupId>io.github.pulsar-sigs</groupId>
       <artifactId>distributedlog-core-shaded</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
@@ -49,15 +49,15 @@
           <artifactId>circe-checksum</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.distributedlog</groupId>
+          <groupId>io.github.pulsar-sigs</groupId>
           <artifactId>distributedlog-core</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.distributedlog</groupId>
+          <groupId>io.github.pulsar-sigs</groupId>
           <artifactId>distributedlog-common</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.distributedlog</groupId>
+          <groupId>io.github.pulsar-sigs</groupId>
           <artifactId>distributedlog-protocol</artifactId>
         </exclusion>
         <exclusion>

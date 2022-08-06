@@ -83,7 +83,7 @@
 
     <!-- dlog -->
     <dependency>
-      <groupId>org.apache.distributedlog</groupId>
+      <groupId>io.github.pulsar-sigs</groupId>
       <artifactId>distributedlog-core</artifactId>
       <version>${project.version}</version>
     </dependency>

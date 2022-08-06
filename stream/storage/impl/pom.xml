@@ -53,7 +53,7 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.distributedlog</groupId>
+      <groupId>io.github.pulsar-sigs</groupId>
       <artifactId>distributedlog-core</artifactId>
       <version>${project.parent.version}</version>
       <classifier>tests</classifier>

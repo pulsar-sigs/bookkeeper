@@ -19,15 +19,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>bookkeeper-stats-providers</artifactId>
-    <groupId>org.apache.bookkeeper.stats</groupId>
+    <groupId>io.github.pulsar-sigs.stats</groupId>
     <version>4.16.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.apache.bookkeeper.stats</groupId>
+  <groupId>io.github.pulsar-sigs.stats</groupId>
   <artifactId>prometheus-metrics-provider</artifactId>
   <name>Apache BookKeeper :: Stats Providers :: Prometheus</name>
   <dependencies>
     <dependency>
-      <groupId>org.apache.bookkeeper.stats</groupId>
+      <groupId>io.github.pulsar-sigs.stats</groupId>
       <artifactId>bookkeeper-stats-api</artifactId>
       <version>${project.parent.version}</version>
     </dependency>

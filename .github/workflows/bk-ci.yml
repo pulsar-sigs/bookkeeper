@@ -21,9 +21,9 @@ name: BookKeeper CI
 
 on:
   pull_request:
-    branches:
-      - master
-      - branch-*
+#    branches:
+#      - master
+#      - branch-*
   push:
 #    branches:
 #      - master

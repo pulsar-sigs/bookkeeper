@@ -25,7 +25,7 @@ on:
       - master
       - branch-*
   push:
-    branches:
+#    branches:
 #      - master
 #      - branch-*
   workflow_dispatch:

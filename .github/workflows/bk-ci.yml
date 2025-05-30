@@ -208,6 +208,7 @@ jobs:
 
   integration-tests:
     name: Integration Tests
+    runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 6
       fail-fast: false

@@ -216,7 +216,7 @@ jobs:
           - ubuntu-24.04
           - ubuntu-24.04-arm
     timeout-minutes: 75
-    needs: [ 'build-and-license-check' ]
+#    needs: [ 'build-and-license-check' ]
     if: ${{ needs.build-and-license-check.outputs.docs_only != 'true' }}
     steps:
       - name: Checkout

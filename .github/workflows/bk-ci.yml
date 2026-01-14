@@ -21,14 +21,14 @@ name: BookKeeper CI
 
 on:
   pull_request:
-    branches:
-      - master
-      - branch-*
+#    branches:
+#      - master
+#      - branch-*
   push:
-    branches:
-      - master
-      - branch-*
-  workflow_dispatch:
+#    branches:
+#      - master
+#      - branch-*
+#  workflow_dispatch:
 
 env:
   MAVEN_OPTS: -Xss1500k -Xmx1500m -Daether.connector.http.reuseConnections=false -Daether.connector.requestTimeout=60000 -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.http.retryHandler.class=standard -Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.http.retryHandler.requestSentEnabled=true -Dmaven.wagon.http.serviceUnavailableRetryStrategy.class=standard -Dmaven.wagon.rto=60000
@@ -41,7 +41,14 @@ concurrency:
 jobs:
   build-and-license-check:
     name: PR Validation
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 6
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
     timeout-minutes: 60
     steps:
       - name: Checkout
@@ -208,9 +215,16 @@ jobs:
 
   integration-tests:
     name: Integration Tests
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 6
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
     timeout-minutes: 75
-    needs: [ 'build-and-license-check' ]
+#    needs: [ 'build-and-license-check' ]
     if: ${{ needs.build-and-license-check.outputs.docs_only != 'true' }}
     steps:
       - name: Checkout

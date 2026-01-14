@@ -19,12 +19,20 @@ name: JDK 21 Daily Build
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs at 00:00 UTC every day
-  workflow_dispatch:
+#  workflow_dispatch:
+  push:
 
 jobs:
   jdk21-daily-build:
     name: Build on JDK 21
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 6
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 21
